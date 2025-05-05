@@ -7,14 +7,14 @@ export default function Navbar() {
 
   return (
     <nav className="bg-black text-white shadow-md">
-      <div className="container mx-auto px-4 py-3">
+      <div className="px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="text-xl font-bold">
-              <img src="../assets/react.svg" alt="Bordeaux Times Logo" />
+              <h1>Bordeaux Times Logo</h1>
             </Link>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center">
             <Link to="/" className="text-white">
               Accueil
             </Link>
