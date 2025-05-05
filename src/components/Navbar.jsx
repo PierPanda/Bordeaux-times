@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { useAuth } from "../contexts/AuthProvider";
 
 export default function Navbar() {
-  const { isAuthenticated, logout } = useAuth();
+  const { isAuthenticated, logout, user } = useAuth();
 
   return (
     <nav className="bg-black text-white shadow-md">
@@ -11,7 +11,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="text-xl font-bold">
-              <h1>Bordeaux Times Logo</h1>
+              <h1>Bordeaux Times</h1>
             </Link>
           </div>
           <div className="flex items-center">
@@ -23,8 +23,18 @@ export default function Navbar() {
             </Link>
             {isAuthenticated ? (
               <>
-                <Link to="/profile" className="ml-4 text-white">
+                <Link
+                  to="/profile"
+                  className="ml-4 text-white flex justify-center items-center gap-4"
+                >
                   Profil
+                  {user.id === user?.id && (
+                    <img
+                      src={`https://i.pravatar.cc/40?u=${user.id}`}
+                      alt="Avatar"
+                      className="w-10 h-10 rounded-full"
+                    />
+                  )}
                 </Link>
                 <button
                   onClick={logout}

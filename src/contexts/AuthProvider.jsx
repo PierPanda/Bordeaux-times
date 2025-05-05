@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import React, { useState, useEffect } from "react";
-import { loginUser } from "../services/api";
+import { LoginUser } from "../services/api";
 
 export const AuthContext = React.createContext();
 export const useAuth = () => React.useContext(AuthContext);
@@ -18,7 +18,7 @@ export function AuthProvider({ children }) {
     setLoading(true);
     setError(null);
     try {
-      const userData = await loginUser(username, password);
+      const userData = await LoginUser(username, password);
       setUser(userData);
       setIsAuthenticated(true);
       localStorage.setItem("user", JSON.stringify(userData));
