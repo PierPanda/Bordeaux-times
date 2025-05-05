@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "react-router";
 import { useAuth } from "../contexts/AuthProvider";
+import Logo from "../assets/logo.png";
 
 export default function Navbar() {
   const { isAuthenticated, logout, user } = useAuth();
 
   return (
     <nav className="bg-black text-white shadow-md">
-      <div className="px-4 py-3">
+      <div className="px-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="text-xl font-bold">
-              <h1>Bordeaux Times</h1>
+              <img src={Logo} alt="Logo" width={"75px"} />
             </Link>
           </div>
           <div className="flex items-center">
